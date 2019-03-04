@@ -12,10 +12,10 @@ Arc[] arcShape = new Arc[50];
 
 
 void setup() {
-   size(400, 400);
+   size(1080, 1080, P3D);
    smooth(8);
    
-   arcShape[0] = new Arc(400, 360, 0, 90, 0, blueSolid, whiteSolid); 
+   arcShape[0] = new Arc(height - 20, height - 40, 0, 90, 0, blueSolid, whiteSolid); 
    arcShape[1] = new Arc(400, 360, 94, 98, 0, blueSolid, whiteSolid);
    arcShape[2] = new Arc(400, 360, 100, 104, 0, blueSolid, whiteSolid); 
    
@@ -38,27 +38,27 @@ void setup() {
 void draw() {
    background(blackSolid);
    pushMatrix();
-   translate(width/2, height/2);
+   translate(width/2, height/2, -100);
    //noStroke();
    //stroke(greenSolid);
    //fill(blueSolid, 100);
   
-   arcShape[0].rotateArc(1, false); 
-   arcShape[1].rotateArc(1, false);
-   arcShape[2].rotateArc(1, false);
+   arcShape[0].rotateArc(1); 
+   arcShape[1].rotateArc(1);
+   arcShape[2].rotateArc(1);
    
-   arcShape[3].rotateArc(1, true);
+   arcShape[3].rotateArc(1);
    
-   arcShape[4].rotateArc(1, false);   
-   arcShape[5].rotateArc(1, false);
-   arcShape[6].rotateArc(1, false);
+   arcShape[4].rotateArc(1);   
+   arcShape[5].rotateArc(1);
+   arcShape[6].rotateArc(1);
    
-   arcShape[7].rotateArc(1, true);   
-   arcShape[8].rotateArc(1, true);
-   arcShape[9].rotateArc(1, true);
+   arcShape[7].rotateArc(1);   
+   arcShape[8].rotateArc(1);
+   arcShape[9].rotateArc(1);
    
-   arcShape[10].rotateArc(-1, true);
-   arcShape[11].rotateArc(-1, true);
+   arcShape[10].rotateArc(-1);
+   arcShape[11].rotateArc(-1);
    
    
    

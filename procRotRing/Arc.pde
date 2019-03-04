@@ -18,22 +18,16 @@ class Arc {
     strokeColor = sColor;
   }
 
-  void rotateArc(float direction, boolean outline){
+  void rotateArc(float direction){
     pushMatrix();
       rotate(radians((angle++) * direction));
-      create(outline);
+      createSolid();
     popMatrix();
   }
 
-  void create(boolean outline){
-    if(outline){
-       stroke(strokeColor);
-       noFill();
-    }
-    else {
-       noStroke();
-       fill(fillColor);
-    }
+  void createSolid(){
+      noStroke();
+      fill(fillColor);
       arc(0, 0, outDiameter, outDiameter, radians(firstAngle), radians(secondAngle), PIE); 
       fill(blackSolid);
       arc(0, 0, inDiameter, inDiameter, radians(firstAngle), radians(secondAngle), OPEN);
