@@ -18,9 +18,9 @@ class Arc {
 
   void rotateArc(float direction, int fillOpt){
     pushMatrix();
-    if(second() > 30 && second() < 59){
-        direction*=-1;   
-    }    
+    //if(second() > 30 && second() < 59){
+    //   direction*=-1;   
+    //}    
     rotate(radians((angle++) * direction));
     if(fillOpt == 1){
        createOutline();

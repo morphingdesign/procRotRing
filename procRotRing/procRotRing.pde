@@ -19,7 +19,8 @@ void draw() {
    background(blackSolid);
 
    backGrid.radialGradient(width/2, height/2, 800, whiteSolid, blackSolid);
-   backGrid.radialGrid(width/2, height/2, 800, -5, 2, 1, 1, whiteSolid, true);
+   backGrid.radialGrid(width/2, height/2, 810, 10, 2, 1, 1, whiteSolid, true);
+   backGrid.radialGrid(width/2, height/2, 790, -5, 1, 1, 1, whiteSolid, true);
    backGrid.rectGrid(0, 0, whiteSolid, 40);
    mainLock.rotArc();
 }
