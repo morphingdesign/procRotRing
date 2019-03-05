@@ -64,16 +64,16 @@ class Grid {
   
   // *******************************************************
   // 
-  void radialGradient(float x, float y, int radius, color inColor, color outColor){
+  void radialGradient(float x, float y, int radIn, int radOut, color inColor, color outColor){
     pushMatrix();
     translate(x, y, 0);
-    for (int r = 0; r < radius; r++) {
-      float gradRange = map(r, 0, radius, 0.0, 1.0);
+    for (int r = radIn; r < radOut; r++) {
+      float gradRange = map(r, radIn, radOut, 0.0, 1.0);
       color gradient = lerpColor(inColor, outColor, gradRange);
       noFill();
       stroke(gradient);
       ellipse(0, 0, r, r);
     }
     popMatrix();
-  }  
+  }    
 }  

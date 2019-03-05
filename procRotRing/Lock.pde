@@ -16,45 +16,45 @@ class Lock {
   Lock() {
   // Ring1
      // Solids
-     arcShape[0] = new Arc(dia1Out, dia1In, 0, 90, 0, whiteSolid); 
-     arcShape[1] = new Arc(dia1Out, dia1In, 94, 98, 0, whiteSolid);
-     arcShape[2] = new Arc(dia1Out, dia1In, 100, 104, 0, whiteSolid); 
+     arcShape[0] = new Arc(dia1Out, dia1In, 0, 90, 0, whiteGrad50); 
+     arcShape[1] = new Arc(dia1Out, dia1In, 94, 98, 0, whiteGrad50);
+     arcShape[2] = new Arc(dia1Out, dia1In, 100, 104, 0, whiteGrad50); 
      
-     arcShape[3] = new Arc(dia1Out, dia1In, 140, 200, 0, whiteSolid); 
+     arcShape[3] = new Arc(dia1Out, dia1In, 140, 200, 0, whiteGrad50); 
      
-     arcShape[4] = new Arc(dia1Out, dia1In, 220, 250, 0, whiteSolid); 
-     arcShape[5] = new Arc(dia1Out, dia1In, 254, 258, 0, whiteSolid);
-     arcShape[6] = new Arc(dia1Out, dia1In, 260, 262, 0, whiteSolid);
+     arcShape[4] = new Arc(dia1Out, dia1In, 220, 250, 0, whiteGrad50); 
+     arcShape[5] = new Arc(dia1Out, dia1In, 254, 258, 0, whiteGrad50);
+     arcShape[6] = new Arc(dia1Out, dia1In, 260, 262, 0, whiteGrad50);
      
-     arcShape[7] = new Arc(dia1Out, dia1In, 290, 330, 0, whiteSolid); 
-     arcShape[8] = new Arc(dia1Out, dia1In, 334, 336, 0, whiteSolid);
-     arcShape[9] = new Arc(dia1Out, dia1In, 338, 340, 0, whiteSolid);
+     arcShape[7] = new Arc(dia1Out, dia1In, 290, 330, 0, whiteGrad50); 
+     arcShape[8] = new Arc(dia1Out, dia1In, 334, 336, 0, whiteGrad50);
+     arcShape[9] = new Arc(dia1Out, dia1In, 338, 340, 0, whiteGrad50);
      
      // Ring2
      // Lines
-     arcShape[10] = new Arc(dia2Out, dia2In, 30, 140, 0, whiteSolid);
-     arcShape[11] = new Arc(dia2Out, dia2In, 220, 310, 0, whiteSolid);
+     arcShape[10] = new Arc(dia2Out, dia2In, 30, 140, 0, whiteGrad50);
+     arcShape[11] = new Arc(dia2Out, dia2In, 220, 310, 0, whiteGrad50);
      
      // Ring3
      // Outlines
-     arcShape[12] = new Arc(dia3Out, dia3In, 0, 90, 0, whiteSolid);
-     arcShape[13] = new Arc(dia3Out, dia3In, 110, 120, 0, whiteSolid);
-     arcShape[14] = new Arc(dia3Out, dia3In, 125, 135, 0, whiteSolid);
+     arcShape[12] = new Arc(dia3Out, dia3In, 0, 90, 0, whiteGrad50);
+     arcShape[13] = new Arc(dia3Out, dia3In, 110, 120, 0, whiteGrad50);
+     arcShape[14] = new Arc(dia3Out, dia3In, 125, 135, 0, whiteGrad50);
      // Outlines
-     arcShape[15] = new Arc(dia3Out, dia3In, 180, 230, 0, whiteSolid); 
+     arcShape[15] = new Arc(dia3Out, dia3In, 180, 230, 0, whiteGrad50); 
      // Solids
-     arcShape[16] = new Arc(dia3Out, dia3In, 280, 320, 0, whiteSolid);
+     arcShape[16] = new Arc(dia3Out, dia3In, 280, 320, 0, whiteGrad50);
      // Outlines
-     arcShape[17] = new Arc(dia3Out, dia3In, 325, 340, 0, whiteSolid);
+     arcShape[17] = new Arc(dia3Out, dia3In, 325, 340, 0, whiteGrad50);
      
      // Ring4
      // Lines
-     arcShape[18] = new Arc(dia4Out, dia4In, 80, 150, 0, whiteSolid);
-     arcShape[19] = new Arc(dia4Out, dia4In, 280, 350, 0, whiteSolid);
+     arcShape[18] = new Arc(dia4Out, dia4In, 80, 150, 0, whiteGrad50);
+     arcShape[19] = new Arc(dia4Out, dia4In, 280, 350, 0, whiteGrad50);
      
      // Ring5
      // Solids
-     arcShape[20] = new Arc(dia5Out, dia5In, 170, 270, 0, whiteSolid);
+     arcShape[20] = new Arc(dia5Out, dia5In, 170, 270, 0, whiteGrad50);
   }
 
   void rotArc(){
