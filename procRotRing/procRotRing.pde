@@ -32,7 +32,7 @@ void draw() {
 
    blocks.rectSeries(200, height - 200, 4, 10, 25, 5, whiteGrad15, whiteGrad50, false);
    blocks.rectSeries(5, 150, 10, 30, 15, 5, whiteGrad15, whiteGrad50, false);
-   blocks.rectSeries(100, 200, 15, 25, 4, 20, whiteGrad50, whiteGrad50, true);
+   blocks.rectSeries(150, 270, 12, 25, 4, 20, whiteGrad50, whiteGrad50, true);
    
    backGrid.radialGradient(width/2, height/2, 0, 790, blackSolid, blueSolid150);
    backGrid.radialGradient(width/2, height/2, 1000, 1150, blueSolid150, blackSolid);
