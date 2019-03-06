@@ -1,27 +1,57 @@
 class Quad {
 
-  color quadColor;
+  //color quadColor;
   
-  Quad(color qColor) {
-      quadColor = qColor;
+  Quad() {
+      //quadColor = qColor;
   }
   
-  void initShape(int x, int y){
+  void arrowSeries(int x, int y, float angle, int w, int h, int series, int spacing, color col1, color col2){
       int alpha = 150;
-      for(int i=1; i < 6; i+=1){
+      pushMatrix();
+      rotate(angle);
+      for(int i=1; i < series; i++){
           pushMatrix();
           translate(x, y, -100);
-          alpha = alpha - (i * 8);
-          fill(quadColor, alpha);
-          createSolid();
-          popMatrix(); 
-          x+=80;
+          alpha = alpha - (i * alpha/series);
+          println(alpha);
+          fill(col1, alpha);
+          quadArrow(w, h);
+          x += w/2 + spacing;
+          popMatrix();
       }
+      popMatrix(); 
   }
 
-  void createSolid(){
+  void quadArrow(int w, int h){
       noStroke();
-      quad(0, 0, 40, 0, 80, 80, 40, 80);
-      quad(40, 80, 80, 80, 40, 160, 0, 160);
+      quad(0, 0, w/2, 0, w, h/2, w/2, h/2);
+      quad(w/2, h/2, w, h/2, w/2, h, 0, h);
+  }
+  
+  void rectSeries(int x, int y, int x2, int y2, int series, int spacing, color col1, color col2, boolean solid){
+      for(int i=0; i < series; i++){
+        pushMatrix();
+        translate(x, y, 0);
+        float gradRange = map(i, 0, series, 0.0, 1.0);
+        color gradient = lerpColor(col1, col2, gradRange);
+        if(solid){
+            fill(gradient);
+            noStroke();
+        }
+        else{
+            stroke(gradient);
+            noFill();
+        }
+        rectShape(x2, y2);
+        popMatrix();
+        x = x + x2 + spacing;
+      }
+  }
+  
+  void rectShape(int x2, int y2){
+      //noFill();
+      strokeWeight(1);
+      rect(0, 0, x2, y2);
   }
 }
