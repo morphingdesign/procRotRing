@@ -36,8 +36,7 @@ class Arc {
       fill(arcColor);
       arc(0, 0, outDiameter, outDiameter, radians(firstAngle), radians(secondAngle), PIE); 
       fill(blackSolid);
-      arc(0, 0, inDiameter, inDiameter, radians(firstAngle), radians(secondAngle), OPEN);
-      noStroke();
+      //arc(0, 0, inDiameter, inDiameter, radians(firstAngle), radians(secondAngle), OPEN);    // Not needed to cover inner part of arc
       ellipse(0, 0, inDiameter, inDiameter); 
   }
   
