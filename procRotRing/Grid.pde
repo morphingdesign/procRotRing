@@ -44,7 +44,7 @@ class Grid {
     noFill();
     strokeWeight(ringWeight);
     stroke(gridColor);
-    ellipse(0, 0, diameter, diameter);
+    ellipse(0, 0, diameter/2, diameter/2);
     if(ticks){
        lineLength = diameter/2 - projection;
     }

@@ -30,6 +30,17 @@ class Arc {
     }
     popMatrix();
   }
+  
+  void placeArc(int fillOpt){
+    pushMatrix();
+    if(fillOpt == 1){
+       createOutline();
+    }
+    else{
+       createSolid();
+    }
+    popMatrix();
+  }
 
   void createSolid(){
       noStroke();

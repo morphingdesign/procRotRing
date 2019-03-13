@@ -1,6 +1,6 @@
 class Lock {
 
-  Arc[] arcShape = new Arc[21];
+  Arc[] arcShape = new Arc[22];
   
   int dia1Out = 1080 - 20;
   int dia1In = dia1Out - 40;
@@ -15,6 +15,8 @@ class Lock {
 
   Lock() {
   // Ring1
+      
+  
      // Solids
      arcShape[0] = new Arc(dia1Out, dia1In, 0, 90, 0, whiteGrad50); 
      arcShape[1] = new Arc(dia1Out, dia1In, 94, 98, 0, whiteGrad50);
@@ -55,6 +57,12 @@ class Lock {
      // Ring5
      // Solids
      arcShape[20] = new Arc(dia5Out, dia5In, 170, 270, 0, whiteGrad50);
+  }
+
+  void locArc(){
+     pushMatrix();
+     translate(width/2, height/2, -101); 
+     popMatrix();
   }
 
   void rotArc(){
