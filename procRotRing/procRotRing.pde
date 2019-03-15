@@ -1,6 +1,7 @@
 import tracer.paths.*;
 import tracer.*;
 
+// Color scheme
 color blackSolid = color(0);
 color blackGrad0 = color(0, 0);
 color blueGrad50 = color(0, 0, 255, 50);
@@ -14,11 +15,22 @@ color whiteGrad15 = color(255, 15);
 color whiteGrad5 = color(255, 5);
 color whiteSolid = color(255);
 
+// Text box parameters
+int xPos = 0;
+int yPos = 0;
+int boxW = 360;
+int boxH = 460;
+int margin = 10;
+int lineLength = 20;
+Textbox textBox0, textBox1;
+
+// Circuit parameters
 int numOfCircuits = 25;
 Circuit[] circuit = new Circuit[numOfCircuits];
 MultiPath[] circuitPath = new MultiPath[numOfCircuits];
 Tracer blipTracer;
 Blip[] circuitBlip = new Blip[numOfCircuits];
+PolyGrowth growth0;
 
 Lock mainLock = new Lock();
 Grid backGrid;
@@ -28,16 +40,27 @@ Quad blocks;
 void setup() {
    size(1920, 1080, P3D);
    smooth(8);
+   frameRate(5);
+   
+   // Parameters are (xPos, yPos, width, height, margin, lineLength, strokeColor, textColor)
+   textBox0 = new Textbox(xPos, height/2 + 60, boxW, boxH, margin, lineLength, whiteSolid, blueSolid);
+   //textBox1 = new Textbox(width - 360, 100, 340, 360, margin, lineLength, blueSolid, whiteSolid);
+   textBox1 = new Textbox(xPos, 80, 340, 360, margin, lineLength, blueSolid, whiteSolid);
    
    backGrid = new Grid();
    arrows = new Quad();
    blocks = new Quad();
    
+   // Circuits and blips
    for(int i=0; i < numOfCircuits; i++){
       circuit[i] = new Circuit(i);
       circuitPath[i] = circuit[i].mPath();
       circuitBlip[i] = new Blip(blipTracer, circuitPath[i]);
    }
+   
+   // Polygon growth
+   // Parameters are (Number of polygons, Polygon width, Number of sides per polygon)
+   growth0 = new PolyGrowth(160, 30, 6);
 }
 
 void draw() {
@@ -78,12 +101,22 @@ void draw() {
    
    pushMatrix();
    translate(width/2, height/2, 1);
-   //int ran = int(random(0,1));
    for(int i=0; i < numOfCircuits; i++){
       circuitPath[i].draw(g);
       circuit[i].drawPts();
       circuitBlip[i].renderBlip(numOfCircuits);
    }
    popMatrix();
+   
+   
+   pushMatrix();
+   translate(0, 0, 0);
+   textBox0.drawText();
+   textBox0.drawBoxOutline();
+   textBox1.drawText();
+   textBox1.drawBoxOutline();
+   popMatrix();
+   
+   growth0.drawGrowth(width/2, height/2);
    
 }
