@@ -31,6 +31,7 @@ MultiPath[] circuitPath = new MultiPath[numOfCircuits];
 Tracer blipTracer;
 Blip[] circuitBlip = new Blip[numOfCircuits];
 PolyGrowth growth0;
+Torus torusShape;
 
 Lock mainLock = new Lock();
 Grid backGrid;
@@ -40,7 +41,7 @@ Quad blocks;
 void setup() {
    size(1920, 1080, P3D);
    smooth(8);
-   frameRate(5);
+   //frameRate(5);
    
    // Parameters are (xPos, yPos, width, height, margin, lineLength, strokeColor, textColor)
    textBox0 = new Textbox(xPos, height/2 + 60, boxW, boxH, margin, lineLength, whiteSolid, blueSolid);
@@ -61,6 +62,7 @@ void setup() {
    // Polygon growth
    // Parameters are (Number of polygons, Polygon width, Number of sides per polygon)
    growth0 = new PolyGrowth(160, 30, 6);
+   torusShape = new Torus();
 }
 
 void draw() {
@@ -78,6 +80,9 @@ void draw() {
    arrows.arrowSeries(-110, -80, 0, 40, 80, 36, 10, whiteSolid, blueSolid);
    arrows.arrowSeries(-width-100, -height-110, PI, 80, 160, 12, 40, whiteSolid, blueSolid);
 
+   // Blocks, solid and outlines
+   // Parameters are rectSeries(int xPos, int yPos, int widthOfEachRect, int heightOfEachRect, 
+   // int series, int spacing, color col1, color col2, boolean solid)
    blocks.rectSeries(200, height - 200, 4, 10, 25, 5, whiteGrad15, whiteGrad50, false);
    blocks.rectSeries(5, 150, 10, 30, 15, 5, whiteGrad15, whiteGrad50, false);
    blocks.rectSeries(150, 270, 12, 25, 4, 20, whiteGrad50, whiteGrad50, true);
@@ -117,6 +122,7 @@ void draw() {
    textBox1.drawBoxOutline();
    popMatrix();
    
-   growth0.drawGrowth(width/2, height/2);
+   //growth0.drawGrowth(width/2, height/2);
+   //torusShape.drawShape();
    
 }
