@@ -15,7 +15,7 @@ class PolyGrowth {
   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   // Class Constructor
   // Used to construct polygon growth
-  PolyGrowth(int num, int w, int sides){
+  PolyGrowth(int num, int w, int sides, color polyColor){
        numOfPolygons = num;
        geoWidth = w;
        numOfSides = sides;
@@ -27,7 +27,7 @@ class PolyGrowth {
        
        
        for(int i=0; i < polyShape.length; i++){
-          polyShape[i] = new Polygon(geoWidth, numOfSides, thickness, blueSolid);
+          polyShape[i] = new Polygon(geoWidth, numOfSides, thickness, polyColor);
           randVal[i] = int(random(0, 10));
        }
        int iterations = 0;
@@ -47,9 +47,9 @@ class PolyGrowth {
   
   // *******************************************************
   // 
-  void drawGrowth(int x, int y){
+  void drawGrowth(int x, int y, int z){
        pushMatrix();
-       translate(x, y);
+       translate(x, y, z);
        for(int k=0; k < polyShape.length; k++){
             switch(randVal[k]){
                case 0:

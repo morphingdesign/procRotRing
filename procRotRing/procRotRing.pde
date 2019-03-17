@@ -31,6 +31,7 @@ MultiPath[] circuitPath = new MultiPath[numOfCircuits];
 Tracer blipTracer;
 Blip[] circuitBlip = new Blip[numOfCircuits];
 PolyGrowth growth0;
+PolyGrowth growth1;
 Torus torusShape;
 LineGrid lineGridSys;
 
@@ -62,9 +63,10 @@ void setup() {
    
    // Polygon growth
    // Parameters are (Number of polygons, Polygon width, Number of sides per polygon)
-   growth0 = new PolyGrowth(160, 30, 6);
+   growth0 = new PolyGrowth(160, 30, 6, blueSolid);
+   growth1 = new PolyGrowth(160, 30, 6, whiteGrad50);
    torusShape = new Torus();
-   lineGridSys = new LineGrid();
+   lineGridSys = new LineGrid(whiteSolid, whiteSolid);
 }
 
 void draw() {
@@ -88,6 +90,8 @@ void draw() {
    blocks.rectSeries(200, height - 200, 4, 10, 25, 5, whiteGrad15, whiteGrad50, false);
    blocks.rectSeries(5, 150, 10, 30, 15, 5, whiteGrad15, whiteGrad50, false);
    blocks.rectSeries(150, 270, 12, 25, 4, 20, whiteGrad50, whiteGrad50, true);
+   blocks.rectSeries(width - 300, height/2, 10, 30, 10, 20, whiteGrad15, whiteGrad50, false);
+   blocks.rectSeries(width - 250, height - 300, 15, 25, 20, 5, whiteGrad15, whiteGrad15, true);
    popMatrix();
    
    pushMatrix();
@@ -124,7 +128,13 @@ void draw() {
    textBox1.drawBoxOutline();
    popMatrix();
    
-   growth0.drawGrowth(width/2, height/2);
+   pushMatrix();
+   translate(0, height, 0);
+   rotate(PI);
+   growth1.drawGrowth(0, 0, 0);
+   popMatrix();
+   
+   growth0.drawGrowth(width, 0, -200);
    torusShape.drawShape();
    lineGridSys.drawLineGrid();  
    

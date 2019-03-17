@@ -10,11 +10,15 @@ class LineGrid {
   int numOfMoveLines = 6;
   float[] centerPtPos;
   float[] shiftVar;
+  color lineColor;
+  color textColor;
 
   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   // Class Constructor
   // 
-  LineGrid() {
+  LineGrid(color lineColor, color textColor) {
+     this.lineColor = lineColor;
+     this.textColor = textColor;
      yStart = 0;
      yEnd = height;
      
@@ -34,7 +38,7 @@ class LineGrid {
   void drawLineGrid(){
      pushMatrix();
      translate(x, 0);
-     stroke(blueSolid);
+     stroke(lineColor);
      strokeWeight(1);
      line(0, yStart, 0, yEnd);
      staticLineIteration(40, -10);
@@ -47,7 +51,7 @@ class LineGrid {
   void staticLineIteration(int numOfLines, int lineLength){
      int spacing = (height + 1)/numOfLines;
      pushMatrix();
-     stroke(blueSolid);
+     stroke(lineColor);
      translate(0, moveStat);
      for(int i=-height; i < numOfLines + 1; i++){
         line(0, i * iterationStatic, lineLength, i * iterationStatic);
@@ -78,9 +82,9 @@ class LineGrid {
      movePos = centerPt + (range * sin(ang1 + shift));
      pushMatrix();
      translate(0, movePos);
-     stroke(blueSolid);
+     stroke(lineColor);
      line(0, 0, lineLength, 0);
-     stroke(whiteSolid);
+     stroke(textColor);
      float factor = 0.5;
      float numValue = height / movePos * factor;
      String numVal = nf(numValue, 2, 3);
