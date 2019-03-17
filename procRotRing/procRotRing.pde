@@ -32,6 +32,7 @@ Tracer blipTracer;
 Blip[] circuitBlip = new Blip[numOfCircuits];
 PolyGrowth growth0;
 Torus torusShape;
+LineGrid lineGridSys;
 
 Lock mainLock = new Lock();
 Grid backGrid;
@@ -63,6 +64,7 @@ void setup() {
    // Parameters are (Number of polygons, Polygon width, Number of sides per polygon)
    growth0 = new PolyGrowth(160, 30, 6);
    torusShape = new Torus();
+   lineGridSys = new LineGrid();
 }
 
 void draw() {
@@ -122,7 +124,8 @@ void draw() {
    textBox1.drawBoxOutline();
    popMatrix();
    
-   //growth0.drawGrowth(width/2, height/2);
-   //torusShape.drawShape();
+   growth0.drawGrowth(width/2, height/2);
+   torusShape.drawShape();
+   lineGridSys.drawLineGrid();  
    
 }

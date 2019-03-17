@@ -15,7 +15,7 @@ class Torus {
   
   // Torus
   float u, v;
-  float dia = 330;
+  float dia = 325;
   float radius = 100;
   
   // Torus Knot
